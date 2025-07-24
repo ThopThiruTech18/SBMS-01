@@ -1,0 +1,28 @@
+package in.thiru;
+
+public class Car {
+
+	private IEngine engine;
+
+	public void setEngine(IEngine engine) {
+		
+		System.out.println("Injecting class name :"+engine.getClass().getName());
+		this.engine = engine;
+	}
+
+	public Car() {
+		System.out.println("Car :: 0-Param Constructor");
+	}
+
+	public void drive() {
+
+		boolean start = engine.start();
+		if (start) {
+			System.out.println("Car Driving started..");
+		} else {
+			System.out.println("Car driving failed to start.");
+		}
+
+	}
+
+}

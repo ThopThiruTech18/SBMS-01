@@ -1,0 +1,45 @@
+package in.thiru;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class CarMain {
+	
+	
+	public CarMain() {
+		System.out.println("CarMain :: 0-param");
+	}
+
+	public static void main(String[] args) {
+		
+		
+		ApplicationContext context=new ClassPathXmlApplicationContext("spring-beans.xml");
+		
+		
+	
+		
+		Car car1 = context.getBean(Car.class);
+		car1.drive();
+		
+		Car car2 = context.getBean(Car.class);
+		
+		Car car3 = context.getBean(Car.class);
+		
+		System.out.println(car1.hashCode());
+		System.out.println(car2.hashCode());
+		System.out.println(car3.hashCode());
+		
+		
+		System.out.println("Diesel Engine");
+		DieselEngineImpl diesel1 = context.getBean(DieselEngineImpl.class);
+		System.out.println(diesel1.hashCode());
+		DieselEngineImpl diesel2 = context.getBean(DieselEngineImpl.class);
+		System.out.println(diesel2.hashCode());
+		DieselEngineImpl diesel3 = context.getBean(DieselEngineImpl.class);
+		System.out.println(diesel3.hashCode());
+		
+		
+
+	}
+
+}

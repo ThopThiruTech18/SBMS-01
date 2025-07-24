@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+  	<bean id="carmain" class="in.thiru.CarMain"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl" scope="prototype" autowire-candidate="false"/>
+     <bean id="petrol" class="in.thiru.PetrolEngineImpl" autowire-candidate="false"/>
+      <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/>
+      
+      <bean id="car" class="in.thiru.Car"  autowire="byType"/>
+      
+     		
+</beans>

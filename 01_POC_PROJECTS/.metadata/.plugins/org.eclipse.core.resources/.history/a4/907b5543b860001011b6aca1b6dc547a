@@ -1,0 +1,21 @@
+package in.thiruit.rest;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import in.thiruit.entity.Student;
+import in.thiruit.service.StudentService;
+
+@RestController
+public class StudentRestController {
+	
+	private StudentService studentService;
+	
+	
+	public List<Student> getAllStudents()
+	{
+		
+	}
+
+}

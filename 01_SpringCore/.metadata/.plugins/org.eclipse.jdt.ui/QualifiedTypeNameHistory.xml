@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="in.thiru.hasarel.Engine"/>
+    <fullyQualifiedTypeName name="in.thiru.hasarel.Car"/>
+    <fullyQualifiedTypeName name="in.thiru.isa.Engine"/>
+    <fullyQualifiedTypeName name="in.thiru.singletone.SingleMain"/>
+    <fullyQualifiedTypeName name="in.thiru.singletone.SingletonDemo"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="in.thiru.DieselEngineImpl"/>
+    <fullyQualifiedTypeName name="in.thiru.ElectricalEngineImpl"/>
+    <fullyQualifiedTypeName name="in.thiru.PetrolEngineImpl"/>
+    <fullyQualifiedTypeName name="in.thiru.Car"/>
+    <fullyQualifiedTypeName name="in.thiru.constr.DieselEngineImpl"/>
+    <fullyQualifiedTypeName name="in.thiru.constr.ElectricalEngineImpl"/>
+    <fullyQualifiedTypeName name="in.thiru.constr.PetrolEngineImpl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.management.InvalidApplicationException"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="in.thiru.singletone.Employee"/>
+    <fullyQualifiedTypeName name="in.thiru.IEngine"/>
+</qualifiedTypeNameHistroy>
