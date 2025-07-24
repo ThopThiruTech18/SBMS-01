@@ -1,0 +1,35 @@
+package in.thiru;
+
+public class Car {
+
+	private IEngine engine;
+
+	
+
+	public Car(IEngine engine) {
+		System.out.println("Car :: Param Contructor");
+		this.engine = engine;
+	
+	}
+	
+	public Car() {
+		System.out.println("Car :: 0-Param Contructor");
+	}
+
+
+
+	
+	public void drive() {
+
+		boolean start = engine.start();
+		if (start) {
+			System.out.println("Car Driving started..");
+		} else {
+			System.out.println("Car driving failed to start.");
+		}
+
+	}
+	
+	
+
+}

@@ -542,7 +542,32 @@ Two ways:
       <bean id="car" class="in.thiru.Car"  autowire="byType"/>
 
 
-Constructor
+Constructor:
+------------
+When we are using "mode as constructor" at time we need to use parameteraised contructor only.
+
+Ioc contaner is going to identify based on the datatype of the variable.
+
+If we are having more than one implementation class. 
+
+At the time ioc container get confused,
+
+It is going to get ambiguity problem.
+
+when we are having ambiguity problem we need to tell to the ioc container.
+
+
+autowire="constructor" --> It will use byType Mode
+
+
+ <!-- bean definitions here -->
+  	<bean id="carmain" class="in.thiru.CarMain"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl" scope="prototype"/>
+     <bean id="engine" class="in.thiru.PetrolEngineImpl" primary="true"/>
+      <bean id="electrical" class="in.thiru.ElectricalEngineImpl" />
+      
+      <bean id="car" class="in.thiru.Car"  autowire="constructor"/>
+
 none
 
 
