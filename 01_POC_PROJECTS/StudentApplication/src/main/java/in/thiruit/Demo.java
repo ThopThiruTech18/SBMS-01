@@ -1,0 +1,12 @@
+package in.thiruit;
+
+import java.util.Vector;
+
+public class Demo {
+	
+	public static void main(String[] args) {
+		Vector<Integer> v=new Vector<>();
+		System.out.println();
+	}
+
+}

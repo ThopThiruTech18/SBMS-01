@@ -1,0 +1,632 @@
+Language
+Technology
+Framework
+
+Language: Language is medium for the communication.
+
+Human Lanuage:
+-----------------------
+ One person wants to communicate with another person in market we are having human languages.
+
+Ex: Telugu,Hindi,English.
+
+Programming Lanuages:
+----------------------------------
+One person wants to communicate with the machine we are having programming languages.
+Ex: C,Cpp,Java,.Net,Php......
+
+=> Programming languages having the syntaxes or rules.
+
+=> By using programming language we can develop the softwares/applications.
+
+=> Java also programming language
+
+ software 	: Collection of programs.
+
+=> PL we can only standalone applications.
+
+standalone applications:
+-------------------------------
+Only one person can access at time.
+
+That person need to install software than ony he can access the software.
+
+Ex: Notepad, Calculator, Eclipse Ide.
+
+
+Technology:
+----------------
+	-> By using programming languages we are developing the technologies.
+
+	-> By using technologies we can develop the web 	  applications/Destributed apps/mobile apps
+
+	Ex: Jdbc,Jsp,Servlets.
+
+Web Application: 
+------------------------
+=>At a time any no of customers can access the application.
+
+=>At any point of time
+
+=>At any location customer can access.
+
+Ex: Flipkart,Amazon,Gmail....
+
+
+
+E-Commerce:
+------------------
+100 Tables
+
+Dao:
+-------
+Register the driver
+Get the connecton
+Create statement/Prepare statement/Callable statement
+Execute the query
+Process the result
+Close the connection
+
+....
+
+1 Tabel = 1 Dao
+jdbc 		=100 Dao * 10methods * 10 Line 	= 	10,000
+Freme work  = 100 Dao * 10methods * 1 	= 	1000 
+======================================
+				9000
+
+Challanges:
+-------------------
+We need to write more line lines of the code.
+We are going to get more exceptions.
+Maintainence is difficult.
+
+
+
+
+
+FrameWork:
+-----------
+Framework is nothing but semi-developed sofware.
+
+Advantages
+----------------------------------------
+We need to write less lines of the code.
+
+We are going to get less exceptions.
+
+Maintainence is easy.
+
+Struts: 
+-----------
+=>It is a framework.
+
+=>By using struts we can develop only controller layer.
+
+Hibernate : 
+-----------
+=>It is a framework.
+
+=>By using Hibernate we can develop only persistance/dao layer.
+
+Spring :
+----------
+It is also called as a semi developed software
+
+It is a application development software.
+
+By using spring we can entire project.
+
+Application = Common logic(spring) + Business logic(Programmers).
+
+-> It is a free & Open source.
+
+-> Spring framework came into the market 2014
+
+-> Spring is versetile framework.(Institute(Spring)+Struts+Hibernate)
+
+-> Current version of the spring is 6.x
+
+-> It is a loosly coupled.
+
+-> Spring is following the modular fashion.
+
+
+Spring Modules:
+---------------
+Spring Core
+
+Spring Context
+
+Spring Dao/Jdbc
+
+Sprig Aop
+
+Spirng webmvc
+
+Spring Rest
+
+Spring Cloud
+
+SPring Batch
+
+Spring ORM
+
+Spring Core:
+-----------
+Spring Core is base module.
+
+It is providing the fundamental concepts of spring.
+
+	IOC Container
+	Autowiring
+	Dependency Injection
+
+
+Spring Context:
+---------------
+Spring context is a module in the spring framework
+
+It is providing the configurations.
+
+Which class should be handle by ioc container.
+
+Which calss should not be hadnle by ioc container.
+
+
+Spring Dao/Jdbc:
+-----------------
+By using spring jdbc we can persitance layer.
+
+persistance layer: The layer which is communicate with the db.
+
+Register the driver  						= Spring
+Get the connection                          = Spring
+Create statement/Prepare statement/Callable statement =Spring
+Execute the query 		= Programmer
+Process the result 		= Spring
+Close the connection    = Spring
+
+
+Sprig Aop:
+----------
+It used to seperate primary logic + secondary logic.
+
+primary logic(business) = deposit + withdraw + Transfter.
+secondary logic  = Security + Logging  + Transaction(iud)
+System.out.println();
+Logging = trace() + debug() + info() + warn() + error() + fatal()
+
+Spirng webmvc:
+--------------
+ 			-> By Using spring webmvc we can develop web + distributed + mvc. 			
+     
+      distributed:
+      -----------
+       ->one application wants to communicate with another application.
+       ->B2B
+
+       Ex: 
+            PhonePay      --> CanaraBank
+            MakeMyTrip    --> IRCTC
+            Passport      --> Adhar 
+
+       Web: One customer wants to communicate with another application
+            B2C
+
+
+Spring Rest  : microservices/services/webservices/rest apis
+              
+              Monolithic: If we develop all functionalities in single project/jar Monolithic.
+              Microservices  : If we develop every funtionality seperatly Microservice.
+
+Spring Cloud  :	 
+          Api Gateway
+				 Service Registry
+				 Admin Server
+				 Zipkin Server
+				 Config Server
+
+Spring Security :   
+                   Authentication :   who can login our application.
+					         Authorization  :   Who can access which functionality.
+
+Spring Batch :  If we want to perform bulk operations.
+                 for(int =1;i<=100000;i++)
+                 {
+                    syso("sending statement"+gmail)
+                 }
+
+			 Every month we are getting the monthly statement 
+
+Spring ORM: Object Relation mapping
+		
+
+Example:
+		String sql="insert into emp value(1,'Ramu',9000)"
+
+		public boolean empSave(Employee emp)
+		{
+			empRep.save(emp);
+		}
+
+
+Layered Architecture:
+======================
+Controller Layer :  It is used to handle request & Response.
+
+Service Layer    :  Inside the service layer we are going to write business logic
+                  (add,mul,tranfer,sending msg,creaing 
+					           pdf,create and populate the data in excel)
+
+
+Dao Layer 		 :  Inside the Dao layer we are going to write 								persitance/db communication logic.
+
+-> Service layer is depending on dao layer.
+-> Controller layer depending on the service layer.
+
+1) IS-A(Inheritence)		: Inheritance(If we extends one class in the future we are not able to extend other class:: Not support multople inheritencer)
+2) HAS-A(composition)	: One class Object we will create in another class
+
+class Car
+{
+
+	void drive()
+	{
+		Engine eng=new Engine()
+		int isStarted=eng.start();
+		if(isStarted>0)
+		{
+		  System.out.println("Car Driving started")
+		}
+	}
+}
+
+class Engine
+{
+	int start()
+	{
+	System.out.print
+	 return 1;
+	}
+}
+
+
+Standalone application Debugging:
+---------------------------------
+F5 : Step into  : Go inside the method
+F6 : Step Over  : From starting to ending it will go step by step
+F7 : Step Return: It will go to the previos stage
+F8 : Resume 	: we can go from one debugging point to another point,
+
+With IS-A & HAS-A relationship our application getting tightly coupled.
+
+Tightly coupling is not recommended for the application developement.
+
+Always our classes should be loosly couple.
+
+If we want achive loosly coupling we need to use spring core module.
+
+
+Spring Core:
+------------
+It is base module for all the modules
+
+It is providing the fundamental concepts of the spring
+
+1)IOC-Container
+2)Dependency Injection   Car   Eng
+3)Autowiring[Manual,Autowiring]
+
+If our classes wants to taking care by IOC.
+We need to follow Stategy design pattern rules.
+
+-----------------------
+Stategy Design pattern:
+-----------------------
+Favour compostion over inheritence.
+
+Open closed principle(Class should be open for the extension closde for the modification)
+
+Code with interfaces Instead of implementation classes.
+
+
+Without Open/Closed Principle:
+-------------------------------
+Every time you add a new report type, you modify the core logic.
+class ReportGenerator {
+    public void generateReport(String type) {
+        if (type.equals("PDF")) {
+            System.out.println("Generating PDF report...");
+        } else if (type.equals("EXCEL")) {
+            System.out.println("Generating Excel report...");
+
+        } else {
+            System.out.println("Invalid report type");
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        ReportGenerator generator = new ReportGenerator();
+        generator.generateReport("PDF");
+        generator.generateReport("EXCEL");
+    }
+}
+-------------------------------
+2. With Open/Closed Principle
+-------------------------------
+Use interface + polymorphism so new types can be added without modifying existing logic.
+
+interface Report {
+    void generate();
+}
+
+class PdfReport implements Report {
+    public void generate() {
+        System.out.println("Generating PDF report...");
+    }
+}
+
+class ExcelReport implements Report {
+    public void generate() {
+        System.out.println("Generating Excel report...");
+    }
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        ReportGenerator generator = new ReportGenerator();
+
+        generator.generateReport(new PdfReport());
+        generator.generateReport(new ExcelReport());
+    }
+}
+
+
+---------------------------------------------------
+class HtmlReport implements Report {
+    public void generate() {
+        System.out.println("Generating HTML report...");
+    }
+}
+---------------------------------------------------
+
+
+IS-A Relationship
+-------------------
+
+
+HAS-A Relationship
+------------------
+
+Types of repositories:
+----------------------
+Local repository[C:\Users\hp\.m2\repository]
+Remote Repository(Nexus,Jfrog)(settings.xml)
+Centrol Repository(Maven repository)
+
+Maven:
+------
+Maven is build automation tool.
+1) Maven is going to create folder structure.
+2) Maven is going to download the required jars.
+3) It will clean the java code
+4) It will compile.  
+5) It will pacakge.
+6) It will install.
+
+
+
+1) Maven is going to create folder structure.
+		src/main/java 		-> Business logic(all the java classes). EmpService.java;
+		src/main/resources 	-> All the configurations.
+								Ex:Database,Redis,Msgs,kafka,...
+		src/test/Java 		-> Junit testcases(java classes) 		 EmpServiceTest.
+		src/test/resources  ->   All the configurations related to test cases.
+		target 				-> It is going to store all .class files(jar) EmpService.class;-> package
+		Maven dependencies  -> 
+		pom.xml				->
+
+
+Goals:
+-----
+clean  			 ->  		 it is used to delete .class files(jar file)
+compile			 ->			 It is used to compile the project. and it will generate .class
+test  			 ->          It is used to execute the test cases.
+package			 -> 		 It is used to package all .class files and generate .jar file
+install      	 -> 		 It is used create jar file under the .m2
+
+Spring Bean:
+-----------
+The java clas which is managed by IOC container called as spring bean.
+
+Dependency Injection:
+---------------------
+The process of injecting dependent class object into target class object.
+
+The process of injecting one class object into another class object called DI.
+
+Dependency injection we can perform two ways.
+
+1) Setter injection
+--------------------
+The process of injecting dependent class object into target object by using setter method called SI.
+If we are using setter injection we need to configure Property tag.
+
+Ex: <property name="engine" ref="petrol" />
+
+2)Constructor injection
+------------------------
+The process of injecting dependent object into target object by using constructor  called CI.
+If we are using Constructor injection we need to configureag.
+ constructor-args t
+
+ex: <constructor-arg name="engine" ref="petrol" />
+
+
+Scope:
+-----
+Scope nothing but how many objects should be created by ioc container.
+1)Singleton
+2)Prototype
+3)Request
+4)Session
+
+
+
+Wiring:
+------
+1)Manualwiring
+2)Autowiring
+
+1)Manualwiring:
+---------------
+Manual wiring means programmer need to tell to the ioc contaner 
+which class is "dependent class" and which class "target class" by using ref attribute.
+
+if we use constructor injection:
+-----------------------------
+  <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/> 
+ <bean id="car" class="in.thiru.Car">
+      
+     		 <constructor-arg name="engine" ref="electrical" />
+      
+      </bean>
+
+if we use setter injection:
+-----------------------------
+  <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/>
+      
+      <bean id="car" class="in.thiru.Car">
+      
+     		 <property name="engine" ref="electrical" />
+      
+      </bean>
+Autowiring:
+-----------
+Ioc cotainer automatically identify the dependent object and target object. 
+It is going to inject dependent class object into target class object.
+Modes:
+------
+byName
+byType
+Constructor
+none
+
+
+Error creating bean with name 'car' defined in class path resource [spring-beans.xml]: Unsatisfied dependency expressed through bean property 'engine': No qualifying bean of type 'in.thiru.IEngine' available: expected single matching bean but found 3: disel,engine,electrical
+Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'car' defined in class path resource [spring-beans.xml]: Unsatisfied dependency expressed through bean property 'engine': No qualifying bean of type 'in.thiru.IEngine' available: expected single matching bean but found 3: disel,engine,electrical
+
+
+Modes:
+------
+byName:
+-------
+Ioc container is going to identify based on the name of the target class variable name.
+
+byType:
+-------
+Ioc contaner is going to identify based on the datatype of the variable.
+
+If we are having more than one implementation class. 
+
+At the time ioc container get confused,
+
+It is going to get ambiguity problem.
+
+when we are having ambiguity problem we need to tell to the ioc container.
+
+Two ways:
+----------
+1)  primary="true"
+
+  <!-- bean definitions here -->
+  	<bean id="carmain" class="in.thiru.CarMain"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl"   primary="true"/>
+     <bean id="petrol" class="in.thiru.PetrolEngineImpl" />
+      <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/>
+      
+      <bean id="car" class="in.thiru.Car"  autowire="byType"/>
+
+2) autowire-candidate="false"
+
+	<bean id="carmain" class="in.thiru.CarMain"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl"   autowire-candidate="false"/>
+     <bean id="petrol" class="in.thiru.PetrolEngineImpl"   autowire-candidate="false"/>
+      <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/>
+      
+      <bean id="car" class="in.thiru.Car"  autowire="byType"/>
+
+
+Constructor:
+------------
+When we are using "mode as constructor" at time we need to use parameteraised contructor only.
+
+Ioc contaner is going to identify based on the datatype of the variable.
+
+If we are having more than one implementation class. 
+
+At the time ioc container get confused,
+
+It is going to get ambiguity problem.
+
+when we are having ambiguity problem we need to tell to the ioc container.
+
+
+autowire="constructor" --> It will use byType Mode
+
+
+ <!-- bean definitions here -->
+  	<bean id="carmain" class="in.thiru.CarMain"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl" scope="prototype"/>
+     <bean id="engine" class="in.thiru.PetrolEngineImpl" primary="true"/>
+      <bean id="electrical" class="in.thiru.ElectricalEngineImpl" />
+      
+      <bean id="car" class="in.thiru.Car"  autowire="constructor"/>
+
+none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,177 @@
+Spring:
+-------
+Spring is also called as a application develop project.
+
+By using spring we can develop below types of the applications
+
+	1) Standalone applications
+	2) Web Apps
+	3) Distributed apps
+
+Spring is a free and open source software.
+
+Spring is developed in modular fashion.
+
+Spring is coming into the picture/market in the year of 2014(1.0).
+
+Latest/current version of the spring is 6.x.
+
+Spring is non-invasive framework(spring not forcing to use all the module in the project).
+
+spring is versatile framework(struts,hiberanate)
+
+if we develop any application by using spring framework.
+ Programmer responsibility to manage the configurations(spring-beans.xml).
+
+Every project configurations are the common. 
+if we are having common logic means why we need to write(we can automate)
+
+spring  team is realized if we having common logic we can automate those logic.
+
+spring team introduced the spring boot framework in the market.
+
+
+Spring Boot:
+-----------
+Spring boot is an approach to develop the applications with less configurations.
+
+
+Spring Boot is the extension of spring frame work.
+
+Spring Boot internally uses spring frame only.
+
+What type of the applications we can develop by using spring, 
+same kind of the applications we can develop by using spring boot also.
+
+
+Spring  = primary logic + Business logic + configurations
+
+Sprng boot= primary logic + Business logic - configurations
+
+Sprng boot= Spring Framework - configurations.
+
+Advantages of the Spring Boot:
+-----------------------------
+1) Auto Configurations.
+2) POM Starters.
+3) Embedded Server(In-built servers).
+4) Rapid application development.
+5) Actuators
+6) No need to mention versions also.
+
+
+1) Auto Configurations(Custom/User beans + Predefined):
+-----------------------
+Automatically ioc container is going to identify spring bean classes based on the annotations+dependencies.
+
+spring-starter-web 		-->   It is goint to start tomcat server.
+spring-starter-mysql    -->   It is used to create the connection pool.(10)
+spring-starter-mail     -->   It is used to create the smtp connections.
+spring-starter-security -->   It is used to provide login page.
+
+
+POM Starters:
+-------------
+Pom starter nothing but dependencies.
+
+Embedded Server:
+----------------
+Embedded Server nothing but inbuilt servers. 
+spring boot is providing the ready made server for the application development.
+
+ex: tomcat,jetty,netty.....
+
+Rapid application development:
+------------------------------
+	Rapid application development nothing but, We can develop applications quickly.
+
+	When we are developing the applications we need to consontrate on business logic.
+
+Actuators:
+----------
+Actuators are used to monitor and manage our application.
+Actuators is built in concept.
+
+How classes loaded
+How many objects created
+How many threads are running
+what are urls available in the project
+what is the heap dump
+what is the thread dump.
+what is the health of our project
+we can stop our application
+
+versions:
+---------
+No need to metion versions in the spring boot, 
+
+based on the parent starter it will downlaod child dependecies.
+
+How many ways we can create the spring app
+------------------------------------------
+1) By using IDE(Eclipse(install pluggin),Sts,Intellij).
+2) start.spring.io
+
+
+
+What is start class in the spring boot
+-------------------------------------
+When we create the spring boot application by default we will get main class this called as start class in the spring boot.
+
+Start class is the entry point for the spring boot application execution.
+
+@SpringBootApplication:
+-----------------------
+@EnableAutoConfiguration
+@SpringBootConfiguration  OR @Configuration
+@ComponentScan
+
+
+@EnableAutoConfiguration:
+-------------------------
+Automatically ioc container is going to identify spring bean classes based on the annotations+dependencies.
+
+
+@SpringBootConfiguration  OR @Configuration
+--------------------------------------------------
+I dont give chance to the ioc container for the object creation.
+I will create the object and i will give the my object to the ioc container.
+
+EX: SecuiryConfig, KafkaConfig, RedisConfig, SwaggerConfig......
+
+@ComponentScan:
+---------------
+The process of scanning packages for the object creation called component scanning.
+
+First scanning will be start from base package
+
+Base package: The package which contains the start class (in.thiruit)
+
+Sub package : The package which start from the base package (in.thiruit.service)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
