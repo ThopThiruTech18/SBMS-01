@@ -135,19 +135,58 @@ Automatically ioc container is going to identify spring bean classes based on th
 @SpringBootConfiguration  OR @Configuration
 --------------------------------------------------
 I dont give chance to the ioc container for the object creation.
+
 I will create the object and i will give the my object to the ioc container.
+
+when we creating the configuration class at the method level we need place @bean annotation.
 
 EX: SecuiryConfig, KafkaConfig, RedisConfig, SwaggerConfig......
 
 @ComponentScan:
 ---------------
-The process of scanning packages for the object creation called component scanning.
+The process of scanning packages for the beans object creation called component scanning.
 
-First scanning will be start from base package
+First scanning will be start from base package.
 
 Base package: The package which contains the start class (in.thiruit)
 
-Sub package : The package which start from the base package (in.thiruit.service)...
+Sub package : The package which start from the base package (in.thiruit.service.ojdsj)...
+
+
+Spring
+SpringBOOT
+Advantages compared spring app
+	AutoConfiguration
+	Pom starters
+	Embedded Servers
+	Rapid application development
+	Actuators
+	Versions Conflicts
+How many ways we can create the spring boot app
+1) IDE
+2) start.spring.io(spring Initiolizer website)
+what is the start class in the spring boot.
+@SpringBootApplication
+	@EnableAutoConfiguration
+	@SpringBootConfiguration  OR @Configuration
+	@ComponentScan
+
+
+@Component
+@Service
+@Repository
+
+@RestController
+@Controller
+
+@Configuration
+@Bean
+
+Run Method:
+------------
+	
+
+
 
 
 
