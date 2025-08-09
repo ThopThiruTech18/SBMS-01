@@ -182,8 +182,97 @@ what is the start class in the spring boot.
 @Configuration
 @Bean
 
-Run Method:
+Run Method:[bootstrap logic]
 ------------
+start the stop watch
+start listeners
+
+prepare the environment
+print the banner
+
+create ioc container
+refresh the ioc container
+
+stop the stopwatch(Total time)[currnt time -start time]
+return ioc contaner object
+
+
+
+
+ConfigurableApplicationContext --> standalone apps
+ConfigurableWebServeletApplicationContext --> webapps
+ConfigurablerReactiveWebServerApplicationContext --> reactive
+
+Banner in the spring boot:
+-------------------------
+When we execute/run the springboot application, spring logo will be printed on the console.
+
+This logo called as banner in the springboot.
+
+-> If we want to customize we can customize the banner.
+
+-> in the src/main/resources we need to create banner.txt file
+
+-> we can generate our own logo in the below url
+
+https://devops.datenkollektiv.de/banner.txt/index.html
+
+-> Once we generate the logo we need copy paste on banner.txt file
+
+-> we can run our spring boot app our own banner will be printed on the console.
+
+
+Banner modes:
+-------------
+Banner having 3 modes
+1) Console mode(default mode)
+2) log
+3) off
+
+Runners:
+--------
+Runner are goint to execute only once when ever application got stareted. than we should go for runners concepts.
+
+Ex: When ever spring boot app started i want to load the data from the data base and show on the ui page.
+
+When ever application started i want to send some emails to the students.
+
+When ever application started i want to send some Greetings to the students/customers.
+
+
+Types of runners:
+----------------
+1) Command Line runners
+2) Application runner
+
+->Both are functional interface.
+
+->Functional Interface: FI which is having only one abstract method.
+
+->abstract method: Which is containe only method declaration.
+
+1) Command Line runners:
+-------------------------
+CLR is FI.
+Which is having only one abstaract method.
+void run(String... args) throws Exception;
+
+
+2) Application runner:
+-----------------------
+AR is FI.
+Which is having only one abstaract method.
+void run(ApplicationArguments args) throws Exception;
+
+
+
+
+
+
+
+
+
+
 	
 
 

@@ -14,21 +14,7 @@ public class SpringBootProjectApplication {
 		
 		
 		
-		int beanDefinitionCount = run.getBeanDefinitionCount();
-		System.out.println("Total classes loding in to the JVM by IOC : "+beanDefinitionCount);
-		
-//		String[] beanDefinitionNames = run.getBeanDefinitionNames();
-//		
-//		int num=1;
-//		
-//		for (String beanNames : beanDefinitionNames) {
-//			
-//			System.out.println(num+" : "+beanNames);
-//			
-//			num++;
-//			
-//		}
-		
+	
 		
 		
 	}
