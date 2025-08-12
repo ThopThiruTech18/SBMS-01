@@ -231,7 +231,8 @@ Banner having 3 modes
 
 Runners:
 --------
-Runner are goint to execute only once when ever application got stareted. than we should go for runners concepts.
+If we want to execute any logic only once. when ever application got started.
+ than we should go for runners concepts.
 
 Ex: When ever spring boot app started i want to load the data from the data base and show on the ui page.
 
@@ -247,7 +248,7 @@ Types of runners:
 
 ->Both are functional interface.
 
-->Functional Interface: FI which is having only one abstract method.
+->Functional Interface: FI which is having only one abstract method(SAM).
 
 ->abstract method: Which is containe only method declaration.
 
@@ -263,6 +264,99 @@ void run(String... args) throws Exception;
 AR is FI.
 Which is having only one abstaract method.
 void run(ApplicationArguments args) throws Exception;
+
+
+Annotations:
+------------
+
+Annotation:
+-----------
+			Annotation nothin but metadata.
+			Metadata: Data about the data.
+
+Annotaions(SpringBoot) = (Sprint)
+<bean id="cp" class="in.thiruit.CreditCardPayment"> </bean>
+<bean id="cp" class="in.thiruit.PetrolEngine"> </bean>
+<bean id="cp" class="in.thiruit.DesielEngine"> </bean>
+
+
+Steriotype annotations:
+------------------------
+@Component
+@Service
+@Repository
+
+@Controller
+@RestController
+
+@Configuration
+@Bean
+
+
+@Component:
+----------
+ It is general type of annotation.
+ If we want to represent our java class as a spiring bean.
+
+
+ @Service:
+ ---------
+ It is also used to represent our java class as a spring bean.
+
+ This annotation we need to use in the business layer.
+
+ It is used scan automatically implementation classes.
+
+ @Repository:
+ ------------
+ It is also used to represent our java class as a spring bean.
+
+ In the Dao or Repository class/interface we are goint to use  @Repository annotation.
+
+
+ @Controller:
+ ------------
+ In the web applications if we want to represent our java class as a web componet
+ than we can use @Controller annotation.
+
+ For C2B Communication we can use @Controller
+
+  @RestController:
+  ------------
+  In the distributed applications if we want to represent our java class as a distributed component then we can use @RestController annotation.
+
+  For B2B Communication we can use @RestController
+
+
+@Configuration:
+----------------
+@Configuration or @SpringBootConfiguration
+
+If we want represent our java class a configuration class then we can @Configuration annotation.
+
+If we wants to customize the object creation than also we can use @configuration annotation.
+
+when ever using the Configuration class at the method level we need to use @Bean annotation.
+
+we can use @Bean annotation in any class but recommended to use in the configuration class.
+
+
+@Bean:
+------
+It is used to create custom objects.
+all the above annotations are class level but @Bean is a method level annotation.
+
+
+
+
+@Autowired
+@Qualifier
+@Primary
+@Scope
+
+
+
+
 
 
 
