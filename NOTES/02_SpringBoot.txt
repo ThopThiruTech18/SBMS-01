@@ -296,7 +296,7 @@ Steriotype annotations:
 @Component:
 ----------
  It is general type of annotation.
- If we want to represent our java class as a spiring bean.
+ If we want to represent our java class as a spring bean.
 
 
  @Service:
@@ -321,11 +321,18 @@ Steriotype annotations:
 
  For C2B Communication we can use @Controller
 
+ Ex: Customer --> Flipkart(Business)
+ 	 Customer --> Amazon(Business)
+
   @RestController:
   ------------
-  In the distributed applications if we want to represent our java class as a distributed component then we can use @RestController annotation.
+  In the distributed applications, if we want to represent our java class as a distributed component then we can use @RestController annotation.
 
   For B2B Communication we can use @RestController
+
+  Ex: 
+  PhonePay -->  CanaraBank
+  Paytm    -->  HDFC
 
 
 @Configuration:
@@ -334,9 +341,7 @@ Steriotype annotations:
 
 If we want represent our java class a configuration class then we can @Configuration annotation.
 
-If we wants to customize the object creation than also we can use @configuration annotation.
-
-when ever using the Configuration class at the method level we need to use @Bean annotation.
+If we wants to customize the object creation than also we can use @configuration annotation and method level we need to use @Bean.
 
 we can use @Bean annotation in any class but recommended to use in the configuration class.
 
@@ -346,7 +351,16 @@ we can use @Bean annotation in any class but recommended to use in the configura
 It is used to create custom objects.
 all the above annotations are class level but @Bean is a method level annotation.
 
+@Scope:
+-------
+How many objects got created for spring bean class
 
+we are having 4 types of the scopes:
+------------------------------------
+Singletone
+Prototype
+Request
+Session
 
 
 @Autowired
