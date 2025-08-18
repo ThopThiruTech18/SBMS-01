@@ -370,6 +370,44 @@ Session
 
 
 
+Wiring:
+-------
+1)Manual wiring:
+----------------
+When we are performing manual wiring programmer need to tell to the IOC container which one is depend class and which one is target class
+using ref attribute.
+
+2) Autowing:
+------------
+Autowiring nothing but dependency injection\
+The process of injecting one class object into another class object called autoring
+
+1)Setter Injection
+2)Constructor Injection
+3)Field Injection
+
+1)Setter Injection:
+-------------------
+The process of injecting dependent class object into target class object by using target class setter method called SI.
+
+
+2)Constructor Injection:
+------------------------
+The process of injecting dependent class object into target class object by using target class constructor called CI.
+
+When we have only parameteraised constructor Autowired annotation is optional
+When we have 0-param,Param at the time Autowired annotation is mandatory otherwise ioc contaner will take the 0-param constructor for the object creation. than we will get the null pointer exception.
+
+
+1)Field Injection:
+-------------------
+The process of injecting dependent class object into target class object by using target class Field called FI.
+
+
+
+
+
+
 
 
 
