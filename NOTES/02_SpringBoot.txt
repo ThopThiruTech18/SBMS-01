@@ -377,10 +377,12 @@ Wiring:
 When we are performing manual wiring programmer need to tell to the IOC container which one is depend class and which one is target class
 using ref attribute.
 
-2) Autowing:
+2) Autowiring:
 ------------
-Autowiring nothing but dependency injection\
-The process of injecting one class object into another class object called autoring
+IOC contaner automatically identify the dependent class object and target class object then dependent class will be injected into target class object.
+
+Autowiring nothing but dependency injection.
+The process of injecting one class object into another class object called autowiring
 
 1)Setter Injection
 2)Constructor Injection
@@ -390,18 +392,61 @@ The process of injecting one class object into another class object called autor
 -------------------
 The process of injecting dependent class object into target class object by using target class setter method called SI.
 
+Ex:
+	IUserRepository userRepo;
+
+	@Autowired
+	public void setUserRepo(IUserRepository userRepo) {
+		this.userRepo = userRepo;
+	}
+
 
 2)Constructor Injection:
 ------------------------
 The process of injecting dependent class object into target class object by using target class constructor called CI.
 
 When we have only parameteraised constructor Autowired annotation is optional
+
 When we have 0-param,Param at the time Autowired annotation is mandatory otherwise ioc contaner will take the 0-param constructor for the object creation. than we will get the null pointer exception.
 
+
+method-1:
+---------
+			public UserService(IUserRepository userRepo) {
+				System.out.println("PARAM");
+				this.userRepo = userRepo;
+			}
+
+method-2:
+---------
+
+			@Autowired
+			public UserService(IUserRepository userRepo) {
+				System.out.println("PARAM");
+				this.userRepo = userRepo;
+			}
+			
+			public UserService() {
+				System.out.println("O-PARAM");
+			}
 
 1)Field Injection:
 -------------------
 The process of injecting dependent class object into target class object by using target class Field called FI.
+
+Ex:		@Autowired
+		IUserRepository userRepo;
+
+
+@Primary:
+---------
+In the springboot by default it will use mode as byType mode.
+When we are having more than one implementation. ioc container is going to confused which class we need to inject in the target class.
+thats why we are going to get ambiguity probjelems.
+
+How we can resolve the ambiguity problem:
+------------------------------------------
+By using @Primary annotation we can resolve the ambiguity problem
 
 
 

@@ -20,5 +20,4 @@ public class UserService {
 
 		System.out.println("Name of the user : " + userName);
 	}
-
 }

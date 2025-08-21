@@ -6,8 +6,8 @@
 
     <!-- bean definitions here -->
   	<bean id="carmain" class="in.thiru.CarMain"/>
-    <bean id="disel" class="in.thiru.DieselEngineImpl"   autowire-candidate="false"/>
-     <bean id="petrol" class="in.thiru.PetrolEngineImpl"   autowire-candidate="false"/>
+    <bean id="disel" class="in.thiru.DieselEngineImpl" primary="true" />
+     <bean id="petrol" class="in.thiru.PetrolEngineImpl"  />
       <bean id="electrical" class="in.thiru.ElectricalEngineImpl"/>
       
       <bean id="car" class="in.thiru.Car"  autowire="byType"/>
