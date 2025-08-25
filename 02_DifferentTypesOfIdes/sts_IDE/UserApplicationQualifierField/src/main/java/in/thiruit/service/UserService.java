@@ -9,13 +9,10 @@ import in.thiruit.repo.IUserRepository;
 @Service
 public class UserService {
 
+	@Qualifier("mysql")
 	IUserRepository userRepo;
 
-	@Autowired
-	public void setUserRepo(@Qualifier("mysql")    IUserRepository userRepo) {
-		System.out.println(userRepo.getClass().getName());
-		this.userRepo = userRepo;
-	}
+	
 
 	public UserService() {
 		System.out.println("UserService  : Constructor");
