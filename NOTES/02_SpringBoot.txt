@@ -446,7 +446,13 @@ thats why we are going to get ambiguity probjelems.
 
 How we can resolve the ambiguity problem:
 ------------------------------------------
-By using @Primary annotation we can resolve the ambiguity problem
+1)By using @Primary annotation we can resolve the ambiguity problem
+we need to mention @Primary on top of dependent class.
+
+2)By using @Qualifier annotation we can resolve the ambiguity problem
+we can metion 3-places @qualifier annotation
+
+  1)Field,Constructor,Setter method
 
 
 
