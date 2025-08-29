@@ -454,6 +454,51 @@ we can metion 3-places @qualifier annotation
 
   1)Field,Constructor,Setter method
 
+  Field Injection:
+  ----------------
+ -> By using Fields we can perform the field injection.
+ -> If we use the field injection internally it will use the Reflection API.
+ -> If we are accessing private fields outside of the class that is violation oops principles.
+
+ NOTE: ->In the companies every person using Field Injection. 
+
+ 	   ->why becouse single line of the code.
+      
+       ->Readability is good
+
+ Setter Injection
+ ----------------
+ -> By using setter method we can perform the setter injection.
+ -> If we use the SI, @Autowiring is mandatory to mention on the top of setter method.
+ -> If we dont mention @Autowiring annotation on the top the setter method it will take the default value(null)
+ -> If we call any method on top the null, we are going to get NullPointerException.
+ -> If we perform any operation with the null value we are going to get NullPointer exception.
+ -> When ever using setter injection target object will be created first then depend class object will be create.
+
+
+  Constructor Injection
+ ------------------------
+ -> By using Constructor we can perform the Constructor injection.
+ -> If we are having only  param constructor at the time @Autowired is optional to mention on Constructor.
+ -> If we are having both 0-parm & param constructor at the time @Autowired is mandatory.
+ -> By default IOC container choose the 0-param constructor for the object creation.
+ -> If we use 0-param constructor Autowiring will be not happend for the variable. 
+ -> So if we call any method on the top of the null value we are going to get nullPointer exception.
+ -> Sol: We need to mention @Autowired annotation on the top of Param constructor.
+ -> When ever using Constructor injection dependent class object will be created first then target class object will be create.
+
+
+ Which one is better:
+ --------------------
+ Constructor injection is better compared to the other injection.
+ Why becouse if we use the setter,Field injection it will partial injection.
+ Field injection is not recomended, It will use internally Reflication API.
+ It is a violation oops principle. That why constructor injection better.
+ why becouse it will not allow the partioal injection.
+
+
+
+
 
 
 

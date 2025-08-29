@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailSending {
 	
+	public EmailSending() {
+		System.out.println("EmailSending :: Dependent class :: Construcotor");
+	}
+	
 	
 
 	public boolean sendEmail(String to, String subject, String body) {
