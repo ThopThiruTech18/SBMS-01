@@ -491,10 +491,26 @@ we can metion 3-places @qualifier annotation
  Which one is better:
  --------------------
  Constructor injection is better compared to the other injection.
- Why becouse if we use the setter,Field injection it will partial injection.
+ Why becouse if we use the setter,Field injection it will allow partial injection.
  Field injection is not recomended, It will use internally Reflication API.
  It is a violation oops principle. That why constructor injection better.
  why becouse it will not allow the partioal injection.
+
+
+Spring Bean Class:
+-------------------
+ The java class which is managed by IOC container that is called Bean class.
+
+ Spring Bean life cycle:
+ -----------------------
+ The life cycle of the beans managed by ioc container.
+
+ called spring bean life cycle.
+
+ we can achieve two ways spring bean life cycle
+
+ 1) Annotations approch[@PostConstruct,@PreDestroy]
+ 2) Interfaces approach[InitializingBean,DisposableBean]
 
 
 
