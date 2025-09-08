@@ -12,7 +12,7 @@ Ex: Telugu,Hindi,English.
 
 Programming Lanuages:
 ----------------------------------
-One person wants to communicate with the machine we are having programming languages.
+One person wants to communicate with the machine/computer we are having programming languages.
 Ex: C,Cpp,Java,.Net,Php......
 
 => Programming languages having the syntaxes or rules.
@@ -54,7 +54,7 @@ Ex: Flipkart,Amazon,Gmail....
 
 
 
-E-Commerce:
+E-Commerce:[crud]
 ------------------
 100 Tables
 
@@ -77,7 +77,7 @@ Freme work  = 100 Dao * 10methods * 1 	= 	1000
 
 Challanges:
 -------------------
-We need to write more line lines of the code.
+We need to write more  lines of the code.
 We are going to get more exceptions.
 Maintainence is difficult.
 
@@ -111,13 +111,31 @@ Hibernate :
 
 Spring :
 ----------
+
+By using spring we can entire project.
+
 It is also called as a semi developed software
 
 It is a application development software.
 
-By using spring we can entire project.
+
 
 Application = Common logic(spring) + Business logic(Programmers).
+
+Banking:
+--------
+Deposite
+Withdraw
+transfer
+secure
+
+E-Commerce(Flipkart):
+---------------------
+Customer Order Product
+Customer can Get Product
+Customer can Pay the money
+Customer can track the order.
+
 
 -> It is a free & Open source.
 
@@ -151,6 +169,9 @@ Spring Cloud
 SPring Batch
 
 Spring ORM
+
+Spring Security
+
 
 Spring Core:
 -----------
@@ -571,7 +592,7 @@ Ioc contaner is going to identify based on the datatype of the variable.
 
 If we are having more than one implementation class. 
 
-At the time ioc container get confused,
+At the time ioc container get confused,    
 
 It is going to get ambiguity problem.
 

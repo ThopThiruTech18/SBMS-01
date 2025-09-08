@@ -1,0 +1,47 @@
+Spring DataJpa:
+----------------
+--> It is used to develop the persistance layer.
+--> persistance layer: The layer which is used to communicate with the database.
+--> Jdbc,Spring Jdbc,Hibernate,ORM Framework if we use these technlogies we need to write the boiler plate/Duplicate code.
+--> If we use the datajpa no need write single line of the code.
+    It is providing pre-defined methods & Interface.
+--> It consists of two interfaces
+      1) CrudRepository[11 to 12-> crud operation]
+      2) JpaRepository[11 to 12 method + crud operation + QBE + Pagination + Sorting]
+
+1) CrudRepository:
+====================
+Methods:
+--------
+Write:
+------
+save()   --> it is used to save the records[upsert] 
+								[n->101, Ramu,10000]-> Insert
+								[n->101, Ramu,11000]-> Update
+
+saveAll()   --> it is used to save the records[upsert] 
+								[n->101, Ramu,10000]-> Insert
+								[n->101, Ramu,11000]-> Update
+
+Read:
+-----
+findById()       --> It used to get the single record.
+findAllById()    --> It used to get the multiple records.
+findAll()		 --> It used to get the all the records
+existById()      --> It used to check perticular record available or not.
+
+Counting:
+---------
+count()          --> It is used to give the total number of records.
+
+delete:
+---------
+deleteById()      --> It used to delete the perticular record in the db table
+deleteAllById()   --> It used to delete the list of record in the db table based on ids
+deleteAll(enties) --> It used to delete the list of record in the db table based entities
+deleteAll()       --> It is used to delete all the records in the db table
+delete(T entity)  --> It is used to delete pertical entity.
+
+
+
+
