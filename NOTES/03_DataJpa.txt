@@ -6,8 +6,8 @@ Spring DataJpa:
 --> If we use the datajpa no need write single line of the code.
     It is providing pre-defined methods & Interface.
 --> It consists of two interfaces
-      1) CrudRepository[11 to 12-> crud operation]
-      2) JpaRepository[11 to 12 method + crud operation + QBE + Pagination + Sorting]
+      1) CrudRepository[12-> crud operation]
+      2) JpaRepository[12 method + crud operation + QBE + Pagination + Sorting]
 
 1) CrudRepository:
 ====================
@@ -25,10 +25,10 @@ saveAll()   --> it is used to save the records[upsert]
 
 Read:
 -----
-findById()       --> It used to get the single record.
-findAllById()    --> It used to get the multiple records.
-findAll()		 --> It used to get the all the records
-existById()      --> It used to check perticular record available or not.
+findById()       			--> It used to get the single record based on the pk.
+findAllById(id1,id2...)    	--> It used to get the multiple records.
+findAll()		 			--> It used to get the all the records
+existById()      			--> It used to check perticular record available or not.
 
 Counting:
 ---------
@@ -36,11 +36,84 @@ count()          --> It is used to give the total number of records.
 
 delete:
 ---------
-deleteById()      --> It used to delete the perticular record in the db table
-deleteAllById()   --> It used to delete the list of record in the db table based on ids
+deleteById(99)      --> It used to delete the perticular record in the db table
+deleteAllById(95,96,97,98,99)   --> It used to delete the list of record in the db table based on ids
 deleteAll(enties) --> It used to delete the list of record in the db table based entities
-deleteAll()       --> It is used to delete all the records in the db table
+del eteAll()      --> It is used to delete all the records in the db table
 delete(T entity)  --> It is used to delete pertical entity.
+
+
+MySql Database:
+---------------
+jdbc,spring jdbc,hibernate,spring jpa.
+
+
+
+URL       :jdbc:mysql://localhost:3306/db_name
+USER_NAME : root
+PASSWORD  : password
+
+ddl-auto=update/create/create_drop.
+->It used to create the tables dynamically.
+->When we start sbms application at time, it will check our entity class name int the db table.
+
+
+Approch : 1: Pre-Defined[based on pk]-->12-methods
+Approch : 2: Based on the non-pk[findBy,getBy,readBy,quaryBy][findByEmpName,findByEmpSalary,getByEmpName]
+Approach: 3: If we want use our-own queries called custom quaries.
+				1)JPQL
+				2)HQL
+
+
+
+lombok annotation:
+-----------------
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
+Entity Class:
+-------------
+The java which is used to map with the database table called as Entity class.
+
+
+@Table
+@Entity
+@Id
+@Column
+
+@Entity:
+--------
+If we want represent our java class as entity class, we need to use @entity annotation on the top of entity class.
+It is a mandatory annotation.
+@Table:
+------
+If we wants to map our java class name with db table name than we can @Table annotion
+It is optional annotion.
+Note:IF our java class name and database table name same
+[Employee[java class]-->Employee[table name]]--> Optional
+[Employee[java class][@Table("EmployeeTab")]-->Employee_Tab[table name]]--> Mandatory
+
+@Id:
+----
+It is used mapped with java class variable name and db table pk column name.
+It is mandatory annotation.
+
+@Column:
+---------
+It is used map  our java class variable name with database column names.
+It is a optional annotation.
+If java class variable name and database column name having with different name.
+
+
+
+
+
+
+
+
 
 
 
