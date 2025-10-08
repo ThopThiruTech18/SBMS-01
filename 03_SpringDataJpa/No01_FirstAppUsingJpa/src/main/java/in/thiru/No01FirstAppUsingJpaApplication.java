@@ -193,19 +193,19 @@ public class No01FirstAppUsingJpaApplication {
 		
 		
 		
-		List<Employee> employees1 = Arrays.asList(
-			    new Employee(101, "Aarav", 1000.00),
-			    new Employee(102, "Abhinav", 1050.00),
-			    new Employee(103, "Aditya", 1100.00),
-			    new Employee(104, "Akash", 1150.00),
-			    new Employee(105, "Alok", 1200.00),
-			    new Employee(106, "Amar", 1250.00),
-			    new Employee(107, "Amit", 1300.00),
-			    new Employee(108, "Anand", 1350.00),
-			    new Employee(109, "Arjun", 1400.00),
-			    new Employee(110, "Ashok", 1450.00));
-		
-		empRepo.deleteAll(employees1);
+//		List<Employee> employees1 = Arrays.asList(
+//			    new Employee(101, "Aarav", 1000.00),
+//			    new Employee(102, "Abhinav", 1050.00),
+//			    new Employee(103, "Aditya", 1100.00),
+//			    new Employee(104, "Akash", 1150.00),
+//			    new Employee(105, "Alok", 1200.00),
+//			    new Employee(106, "Amar", 1250.00),
+//			    new Employee(107, "Amit", 1300.00),
+//			    new Employee(108, "Anand", 1350.00),
+//			    new Employee(109, "Arjun", 1400.00),
+//			    new Employee(110, "Ashok", 1450.00));
+//		
+//		empRepo.deleteAll(employees1);
 		
 		
 		
