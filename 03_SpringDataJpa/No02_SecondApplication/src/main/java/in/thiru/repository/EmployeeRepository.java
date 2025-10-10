@@ -12,6 +12,15 @@ public interface EmployeeRepository  extends CrudRepository<Employee, Integer>{
 	
 	List<Employee> findByEmpNam(String empName);
 	
+	
+	List<Employee> findByEmpSalary(Double empSalary);
+	
+	List<Employee> findByEmpSalaryGreaterThanEqual(Double empSalary);
+	List<Employee> findByEmpNamEndingWith(String empName);
+	
+	
+	
+	
   
 
 

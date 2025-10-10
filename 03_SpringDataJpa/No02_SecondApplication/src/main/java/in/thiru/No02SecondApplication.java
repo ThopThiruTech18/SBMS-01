@@ -21,6 +21,19 @@ public class No02SecondApplication {
 		List<Employee> byEmpNam = empRepo.findByEmpNam("Bala");
 		
 		byEmpNam.forEach(s->System.out.println(s));
+		
+		empRepo.findByEmpSalary(1000.0);
+		
+		List<Employee> byEmpSalaryGreaterThanEqual = empRepo.findByEmpSalaryGreaterThanEqual(4000.0);
+		
+		byEmpSalaryGreaterThanEqual.forEach(s->System.out.println(s));
+		
+		System.out.println("----------------");
+		
+		List<Employee> byEmpNamEndingWith = empRepo.findByEmpNamEndingWith("th");
+		
+	
+		byEmpNamEndingWith.forEach(s->System.out.println(s));
 	}
 
 }

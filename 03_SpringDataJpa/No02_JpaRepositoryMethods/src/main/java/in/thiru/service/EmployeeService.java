@@ -20,5 +20,11 @@ public class EmployeeService {
 
 		empRepo.save(emp);
 	}
+	
+	public void saveAllEmps()
+	{
+		
+	}
+	
 
 }

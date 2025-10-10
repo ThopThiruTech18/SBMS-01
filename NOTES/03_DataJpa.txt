@@ -13,8 +13,9 @@ Spring DataJpa:
 ====================
 Methods:
 --------
-Write:
+Write/update:
 ------
+save & saveAll methods also called as a upsert methods
 save()   --> it is used to save the records[upsert] 
 								[n->101, Ramu,10000]-> Insert
 								[n->101, Ramu,11000]-> Update
@@ -39,13 +40,17 @@ delete:
 deleteById(99)      --> It used to delete the perticular record in the db table
 deleteAllById(95,96,97,98,99)   --> It used to delete the list of record in the db table based on ids
 deleteAll(enties) --> It used to delete the list of record in the db table based entities
-del eteAll()      --> It is used to delete all the records in the db table
+deleteAll()      --> It is used to delete all the records in the db table
 delete(T entity)  --> It is used to delete pertical entity.
+
+JpaRepository:
+--------------
+CrudRepository + Pagination + Sorting + QBE
 
 
 MySql Database:
 ---------------
-jdbc,spring jdbc,hibernate,spring jpa.
+jdbc,spring jdbc,hibernate,spring data jpa.
 
 
 
@@ -59,10 +64,11 @@ ddl-auto=update/create/create_drop.
 
 
 Approch : 1: Pre-Defined[based on pk]-->12-methods
-Approch : 2: Based on the non-pk[findBy,getBy,readBy,quaryBy][findByEmpName,findByEmpSalary,getByEmpName]
-Approach: 3: If we want use our-own queries called custom quaries.
-				1)JPQL
-				2)HQL
+Approch : 2: Based on the non-pk[findBy,getBy,readBy,quaryBy]
+[findByEmpName,findByEmpSalary,getByAge]
+Approach: 3: If we want write our-own queries called custom quaries.
+				1)JPQL/SQL[It will work based on the db-> tablename,column names]
+				2)HQL[It will work based on the entity-> entityclass name,properties]
 
 
 
@@ -88,11 +94,13 @@ The java which is used to map with the database table called as Entity class.
 --------
 If we want represent our java class as entity class, we need to use @entity annotation on the top of entity class.
 It is a mandatory annotation.
+
+
 @Table:
 ------
 If we wants to map our java class name with db table name than we can @Table annotion
 It is optional annotion.
-Note:IF our java class name and database table name same
+Note:IF our java class name and database table name same at the time @table annotation is optional
 [Employee[java class]-->Employee[table name]]--> Optional
 [Employee[java class][@Table("EmployeeTab")]-->Employee_Tab[table name]]--> Mandatory
 
@@ -105,7 +113,8 @@ It is mandatory annotation.
 ---------
 It is used map  our java class variable name with database column names.
 It is a optional annotation.
-If java class variable name and database column name having with different name.
+If java class variable name and database column name having with same -->optional
+If java class variable name and database column name having with different name--> mondatory
 
 
 
