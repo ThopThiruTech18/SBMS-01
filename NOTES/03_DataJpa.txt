@@ -115,6 +115,87 @@ It is used map  our java class variable name with database column names.
 It is a optional annotation.
 If java class variable name and database column name having with same -->optional
 If java class variable name and database column name having with different name--> mondatory
+---------------------------------------------------------------
+
+findBy,readBy,getBy,queryBy
++------------------+---------------------------------------+-----------------------------------------------------------------+
+| Keyword          | Sample Method                         | JPQL Snippet                                                    |
++------------------+---------------------------------------+-----------------------------------------------------------------+
+| Distinct         | findDistinctByLastnameAndFirstname    | select distinct …​ where x.lastname = ?1 and x.firstname = ?2   |
+| And              | findByLastnameAndFirstname            | … where x.lastname = ?1 and x.firstname = ?2                   |
+| Or               | findByLastnameOrFirstname             | … where x.lastname = ?1 or x.firstname = ?2                    |
+| Is, Equals       | findByFirstname, findByFirstnameIs, findByFirstnameEquals | … where x.firstname = ?1                                |
+| Between          | findByStartDateBetween                 | … where x.startDate between ?1 and ?2                          |
+| LessThan         | findByAge LessThan                      | … where x.age < ?1                                             |
+| LessThanEqual    | findByAge LessThanEqual                 | … where x.age <= ?1                                            |
+| GreaterThan      | findByAge GreaterThan                   | … where x.age > ?1                                             |
+| GreaterThanEqual | findByAge GreaterThanEqual              | … where x.age >= ?1                                            |
+| After            | findByStartDate After                   | … where x.startDate > ?1                                       |
+| Before           | findByStartDate Before                  | … where x.startDate < ?1                                       |
+| IsNull, Null     | findByAgeIsNull                        | … where x.age is null                                          |
+| IsNotNull, NotNull | findByAgeIsNotNull                   | … where x.age not null                                         |
+| Like             | findByFirstname Like                    | … where x.firstname like ?1                                    |
+| NotLike          | findByFirstname NotLike                 | … where x.firstname not like ?1                                |
+| StartingWith     | findByFirstname StartingWith            | … where x.firstname like ?1 (parameter bound with appended %) |
+| EndingWith       | findByFirstname EndingWith              | … where x.firstname like ?1 (parameter bound with prepended %)|
+| Containing       | findByFirstname Containing              | … where x.firstname like ?1 (parameter bound wrapped in %)    |
+| OrderBy          |*findByAgeOrderByLastnameDesc           | … where x.age = ?1 order by x.lastname desc                    |
+| Not              | findByLastnameNot                      | … where x.lastname <> ?1                                       |
+| In               | findByAgeIn(Collection<Age> ages)      | … where x.age in ?1                                           |
+| NotIn            | findByAgeNotIn(Collection<Age> ages)   | … where x.age not in ?1                                       |
+| True             | findByActiveTrue()                     | … where x.active = true                                        |
+| False            | findByActiveFalse()                    | … where x.active = false                                       |
+| IgnoreCase       | findByFirstnameIgnoreCase             | … where UPPER(x.firstname) = UPPER(?1)                         |
++------------------+---------------------------------------+-----------------------------------------------------------------+
+	 public  List<Person> findDistinctByLastnameAndFirstname(String lastname, String firstname);
+
+//	    List<Person> findByLastnameAndFirstname(String lastname, String firstname);
+//
+//	    List<Person> findByLastnameOrFirstname(String lastname, String firstname);
+//
+//	    List<Person> findByFirstname(String firstname);
+//
+//	    List<Person> findByStartDateBetween(Date startDate1, Date startDate2);
+//
+//	    List<Person> findByAgeLessThan(int age);
+//
+//	    List<Person> findByAgeLessThanEqual(int age);
+//
+//	    List<Person> findByAgeGreaterThan(int age);
+//
+//	    List<Person> findByAgeGreaterThanEqual(int age);
+//
+//	    List<Person> findByStartDateAfter(Date startDate);
+//
+//	    List<Person> findByStartDateBefore(Date startDate);
+//
+//	    List<Person> findByAgeIsNull();
+//
+//	    List<Person> findByAgeIsNotNull();
+//
+//	    List<Person> findByFirstnameLike(String firstname);
+//
+//	    List<Person> findByFirstnameNotLike(String firstname);
+//
+//	    List<Person> findByFirstnameStartingWith(String firstname);
+//
+//	    List<Person> findByFirstnameEndingWith(String firstname);
+//
+//	    List<Person> findByFirstnameContaining(String firstname);
+//
+//	    List<Person> findByAgeOrderByLastnameDesc(int age);
+//
+//	    List<Person> findByLastnameNot(String lastname);
+//
+//	    List<Person> findByAgeIn(Collection<Integer> ages);
+//
+//	    List<Person> findByAgeNotIn(Collection<Integer> ages);
+//
+//	    List<Person> findByActiveTrue();
+//
+//	    List<Person> findByActiveFalse();
+//
+//	    List<Person> findByFirstnameIgnoreCase(String firstname);
 
 
 
