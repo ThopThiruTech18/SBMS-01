@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -22,11 +23,11 @@ import lombok.ToString;
 @ToString
 
 @Entity
-@Table(name = "employee_table101")
+@Table(name = "employee_table104")
 public class Employee {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer empId; // emp_id
 
 	@Column(name = "empName")

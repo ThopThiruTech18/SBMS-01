@@ -26,7 +26,7 @@ public class No02SecondApplication {
 		List<Employee> employees = Arrays.asList(
 			    new Employee(101, "Aarav", 1000.00),
 			    new Employee(102, "Abhinav", 1050.00),
-			    new Employee(102, "Aditya", 1100.00),
+			    new Employee(103, "Aditya", 1100.00),
 			    new Employee(104, "Akash", 1150.00),
 			    new Employee(105, "Alok", 1200.00),
 			    new Employee(106, "Amar", 1250.00),
