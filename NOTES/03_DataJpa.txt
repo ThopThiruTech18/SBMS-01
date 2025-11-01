@@ -198,6 +198,78 @@ findBy,readBy,getBy,queryBy
 //	    List<Person> findByFirstnameIgnoreCase(String firstname);
 
 
+TimeStamping:
+------------
+If you want to monitor the data, 
+when the  data  got inserted and when data got updated then we need to maintain seperate columns for the
+inserted, updated data & time.
+
+Entity class;
+-------------
+@CreationTimeStamp
+@column(updatable=false,name="created_date")
+private LocalDateTime createdDate;
+
+@updateTimeStamp
+@column(insertable=false,name="updated_date")
+private LocateDataTime updatedDate;
+
+
+Primary KEY:
+-----------
+PK is used to maintain the unique + not null.
+
+
+GENERATORS:
+-----------
+Generaters are used to generate the data for the  pk columns.
+
+1)Pre-defined Generators:
+---------------------------
+table[PK(TABLE)+INSERTED DATA[TABLE]]
+identity[Mysql[table]]
+sequence[Oracle]
+UUID[]
+
+2)Custom Generators:
+---------------------------
+If we want to provide our own patter for the pk. then we can use the custom generator.
+
+Flipkart,Amazon...
+
+ORD001
+ORD002
+ORD003
+
+TCS001
+TCS002
+
+NO0001
+NO0002
+
+@GeneraratedValue: 
+-----------------
+Employee, Employee_seq
+strategy=GenerationType.TABLE :
+-------------------------------
+Employee,hibernate_seq
+
+strategy=GenerationType.identity:
+--------------------------------
+Employee(auto-increment)
+
+strategy=GenerationType.sequence:
+--------------------------------
+Employee,Employee_seq
+
+strategy=GenerationType.UUID:
+--------------------------------
+Employee
+String empId;
+Repository --> PK datatype--> String
+
+
+
 
 
 

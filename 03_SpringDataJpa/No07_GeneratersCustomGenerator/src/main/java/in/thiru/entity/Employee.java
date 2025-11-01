@@ -3,14 +3,12 @@ package in.thiru.entity;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -24,12 +22,12 @@ import lombok.ToString;
 @ToString
 
 @Entity
-@Table(name = "employee_table109")
+@Table(name = "employee_custom_generator")
 public class Employee {
 
 	@Id
-	@GeneratedValue(generator = "custom-id-gen")
-	@GenericGenerator(name="custom-id-gen", strategy = "in.thiru.CustomPkIdGenerator")
+	@GeneratedValue(generator = "customID")
+	@GenericGenerator(name = "customID", strategy = "in.thiru.CustomIdGenerator")
 	private String empId; // emp_id
 
 	@Column(name = "empName")

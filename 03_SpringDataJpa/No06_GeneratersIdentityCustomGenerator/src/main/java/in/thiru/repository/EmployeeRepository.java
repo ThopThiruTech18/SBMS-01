@@ -7,7 +7,7 @@ import in.thiru.entity.Employee;
 import java.util.List;
 
 
-public interface EmployeeRepository  extends JpaRepository<Employee, String>{
+public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
 
 
 

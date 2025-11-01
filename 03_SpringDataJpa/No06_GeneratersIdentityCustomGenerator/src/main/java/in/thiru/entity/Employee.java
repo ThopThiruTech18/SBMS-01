@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GeneratorType;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
@@ -24,13 +23,12 @@ import lombok.ToString;
 @ToString
 
 @Entity
-@Table(name = "employee_table109")
+@Table(name = "employee_table103")
 public class Employee {
 
 	@Id
-	@GeneratedValue(generator = "custom-id-gen")
-	@GenericGenerator(name="custom-id-gen", strategy = "in.thiru.CustomPkIdGenerator")
-	private String empId; // emp_id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer empId; // emp_id
 
 	@Column(name = "empName")
 	private String empNam; // emp_name employeeName
