@@ -19,19 +19,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	@Autowired
 	private EmployeeRepo employeeRepo;
-	
-	@Override
-	public void getAllEmployeeSQL() {
-		List<Employee> allEmployeeSQL = employeeRepo.getAllEmployeeSQL();
-		allEmployeeSQL.forEach(s->System.out.println(s));
-	}
-	public void getAllEmployeeHQL()
-	{
-		List<Employee> allEmployees = employeeRepo.getAllEmployeeHQL();
-		
-		allEmployees.forEach(s->System.out.println(s));
-	}
-	
 
 	@Override
 	public void getAllEmployeeData() throws IOException {
@@ -77,15 +64,5 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	
 
 	}
-	@Override
-	public void getEmployeeSQL() {
-		
-		Employee emp = employeeRepo.getEmployeeSQL(445);
-	 System.out.println(emp.getEmpId());
-	
-	}
-
-
-	
 
 }

@@ -7,7 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import in.thiru.service.EmployeeServiceImpl;
 import in.thiru.service.IEmployeeService;
 
 @SpringBootApplication
@@ -17,13 +16,8 @@ public class No09EmployeeDataExportAsExcelSheetProjectApplication {
 		ConfigurableApplicationContext run = SpringApplication.run(No09EmployeeDataExportAsExcelSheetProjectApplication.class, args);
 		
 		IEmployeeService bean = run.getBean(IEmployeeService.class);
-//		bean.getAllEmployeeData();
-//		bean.getAllEmployeeHQL();
 		
-//		bean.getAllEmployeeSQL();
-		bean.getEmployeeSQL();
-		
-		
+		bean.getAllEmployeeData();
 	}
 
 }
