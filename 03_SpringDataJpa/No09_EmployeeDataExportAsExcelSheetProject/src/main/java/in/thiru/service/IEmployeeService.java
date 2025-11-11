@@ -13,5 +13,10 @@ public interface IEmployeeService {
 	public void getAllEmployeeSQL();
 	
 	public void getEmployeeSQL();
+	public void getEmployeeHQL();
+	
+	
+	
+	void deleteEmployeeSQL();
 
 }

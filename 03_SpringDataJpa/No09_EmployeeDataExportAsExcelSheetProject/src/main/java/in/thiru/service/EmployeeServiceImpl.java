@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.jpa.EntityManagerProxy;
 import org.springframework.stereotype.Service;
 
 import in.thiru.entity.Employee;
@@ -82,6 +83,18 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		
 		Employee emp = employeeRepo.getEmployeeSQL(445);
 	 System.out.println(emp.getEmpId());
+	
+	}
+	@Override
+	public void getEmployeeHQL() {
+		
+		Employee employeHQL = employeeRepo.getEmployeHQL(400);
+		System.out.println(employeHQL);
+	}
+	@Override
+	public void deleteEmployeeSQL() {
+		
+employeeRepo.deleteEmployeeSQL(472);
 	
 	}
 

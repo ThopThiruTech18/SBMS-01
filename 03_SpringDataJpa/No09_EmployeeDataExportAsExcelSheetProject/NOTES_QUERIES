@@ -1,0 +1,309 @@
+package in.thiru.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import in.thiru.entity.Employee;
+import jakarta.transaction.Transactional;
+
+public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
+
+	// =============================================================
+	// 🔹 50 HQL Queries
+	// =============================================================
+
+	@Query("FROM Employee")
+	List<Employee> getAllEmployeeHQL();
+
+	@Query("FROM Employee e WHERE e.empId = :id")
+	Employee getEmployeeByIdHQL(Integer id);
+
+	@Query("SELECT e.empName FROM Employee e")
+	List<String> getAllNamesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empSal > :sal")
+	List<Employee> getEmployeesWithSalaryAboveHQL(Double sal);
+
+	@Query("FROM Employee e WHERE e.empLoc = :loc")
+	List<Employee> getEmployeesByLocationHQL(String loc);
+
+	@Query("SELECT COUNT(e) FROM Employee e")
+	Long getTotalCountHQL();
+
+	@Query("SELECT AVG(e.empSal) FROM Employee e")
+	Double getAverageSalaryHQL();
+
+	@Query("SELECT MAX(e.empSal) FROM Employee e")
+	Double getMaxSalaryHQL();
+
+	@Query("SELECT MIN(e.empSal) FROM Employee e")
+	Double getMinSalaryHQL();
+
+	@Query("SELECT DISTINCT e.empLoc FROM Employee e")
+	List<String> getDistinctLocationsHQL();
+
+	@Query("FROM Employee e WHERE e.empName LIKE :prefix%")
+	List<Employee> getEmployeesByNamePrefixHQL(String prefix);
+
+	@Query("FROM Employee e WHERE e.empSal BETWEEN :min AND :max")
+	List<Employee> getEmployeesInSalaryRangeHQL(Double min, Double max);
+
+	@Query("FROM Employee e ORDER BY e.empSal DESC")
+	List<Employee> getAllOrderBySalaryDescHQL();
+
+	@Query("FROM Employee e ORDER BY e.empName ASC")
+	List<Employee> getAllOrderByNameAscHQL();
+
+	@Query("FROM Employee e WHERE e.empLoc IN :locs")
+	List<Employee> getEmployeesInLocationsHQL(List<String> locs);
+
+	@Query("SELECT e.empLoc, COUNT(e) FROM Employee e GROUP BY e.empLoc")
+	List<Object[]> getCountByLocationHQL();
+
+	@Query("SELECT e.empLoc, AVG(e.empSal) FROM Employee e GROUP BY e.empLoc")
+	List<Object[]> getAverageSalaryByLocationHQL();
+
+	@Query("FROM Employee e WHERE e.empSal > (SELECT AVG(e2.empSal) FROM Employee e2)")
+	List<Employee> getEmployeesAboveAvgSalaryHQL();
+
+	@Transactional
+	@Modifying
+	@Query("DELETE FROM Employee e WHERE e.empId = :id")
+	void deleteEmployeeByIdHQL(Integer id);
+
+	@Transactional
+	@Modifying
+	@Query("UPDATE Employee e SET e.empSal = :sal WHERE e.empId = :id")
+	void updateEmployeeSalaryHQL(Integer id, Double sal);
+
+	@Query("FROM Employee e WHERE e.empLoc IS NULL")
+	List<Employee> getEmployeesWithNullLocationHQL();
+
+	@Query("FROM Employee e WHERE e.empName IS NOT NULL")
+	List<Employee> getEmployeesWithNameHQL();
+
+	@Query("FROM Employee e WHERE e.empSal >= :sal")
+	List<Employee> getEmployeesWithMinSalaryHQL(Double sal);
+
+	@Query("FROM Employee e WHERE e.empName LIKE %:name%")
+	List<Employee> getEmployeesByNameContainsHQL(String name);
+
+	@Query("FROM Employee e WHERE e.empLoc <> :loc")
+	List<Employee> getEmployeesNotInLocationHQL(String loc);
+
+	@Query("FROM Employee e WHERE e.empId IN :ids")
+	List<Employee> getEmployeesByIdsHQL(List<Integer> ids);
+
+	@Query("SELECT e.empName, e.empSal FROM Employee e WHERE e.empSal > :sal")
+	List<Object[]> getNameAndSalaryAboveHQL(Double sal);
+
+	@Query("SELECT e FROM Employee e WHERE e.empName LIKE '_a%'")
+	List<Employee> getEmployeesBySecondLetterA();
+
+	@Query("SELECT e.empLoc, SUM(e.empSal) FROM Employee e GROUP BY e.empLoc")
+	List<Object[]> getTotalSalaryByLocationHQL();
+
+	@Query("FROM Employee e WHERE e.empSal > 75000 ORDER BY e.empName")
+	List<Employee> getHighEarnersOrderedHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empLoc = 'Hyderabad'")
+	List<Employee> getHyderabadEmployeesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empLoc = 'Chennai'")
+	List<Employee> getChennaiEmployeesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empLoc = 'Pune'")
+	List<Employee> getPuneEmployeesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empSal < 50000")
+	List<Employee> getLowSalaryEmployeesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empSal > 100000")
+	List<Employee> getHighSalaryEmployeesHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empName LIKE '%esh'")
+	List<Employee> getEmployeesEndingWithEshHQL();
+
+	@Query("FROM Employee e WHERE e.empLoc IS NOT NULL")
+	List<Employee> getEmployeesWithLocationHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empId > 10")
+	List<Employee> getEmployeesAfterId10HQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empId < 10")
+	List<Employee> getEmployeesBeforeId10HQL();
+
+	@Query("FROM Employee e ORDER BY e.empLoc, e.empSal DESC")
+	List<Employee> getEmployeesOrderedByLocAndSalaryHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empName LIKE 'A%'")
+	List<Employee> getEmployeesStartingWithAHQL();
+
+	@Query("SELECT e FROM Employee e WHERE e.empLoc LIKE '%ai%'")
+	List<Employee> getEmployeesLocationContainsAiHQL();
+
+	@Query("FROM Employee e WHERE e.empSal BETWEEN 60000 AND 90000")
+	List<Employee> getMidRangeSalariesHQL();
+
+	@Query("FROM Employee e WHERE e.empLoc = :loc AND e.empSal > :sal")
+	List<Employee> getEmployeesByLocAndMinSalaryHQL(String loc, Double sal);
+
+	@Query("FROM Employee e WHERE e.empName LIKE '%a%' ORDER BY e.empSal DESC")
+	List<Employee> getEmployeesWithAInNameOrderedHQL();
+
+	@Query("SELECT e.empLoc, COUNT(e.empId) FROM Employee e GROUP BY e.empLoc HAVING COUNT(e.empId) > 2")
+	List<Object[]> getLocWithMoreThanTwoEmployeesHQL();
+
+	@Query("SELECT e.empName, e.empSal FROM Employee e ORDER BY e.empSal DESC")
+	List<Object[]> getNameAndSalaryOrderedHQL();
+
+	// =============================================================
+	// 🔹 50 SQL Queries (Native)
+	// =============================================================
+
+	@Query(value = "SELECT * FROM emp_excel_table;", nativeQuery = true)
+	List<Employee> getAllEmployeeSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_id = :id", nativeQuery = true)
+	Employee getEmployeeSQL(Integer id);
+
+	@Query(value = "SELECT emp_name FROM emp_excel_table", nativeQuery = true)
+	List<String> getAllNamesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal > :sal", nativeQuery = true)
+	List<Employee> getEmployeesWithSalaryAboveSQL(Double sal);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc = :loc", nativeQuery = true)
+	List<Employee> getEmployeesByLocationSQL(String loc);
+
+	@Query(value = "SELECT COUNT(*) FROM emp_excel_table", nativeQuery = true)
+	Long getTotalCountSQL();
+
+	@Query(value = "SELECT AVG(emp_sal) FROM emp_excel_table", nativeQuery = true)
+	Double getAverageSalarySQL();
+
+	@Query(value = "SELECT MAX(emp_sal) FROM emp_excel_table", nativeQuery = true)
+	Double getMaxSalarySQL();
+
+	@Query(value = "SELECT MIN(emp_sal) FROM emp_excel_table", nativeQuery = true)
+	Double getMinSalarySQL();
+
+	@Query(value = "SELECT DISTINCT emp_loc FROM emp_excel_table", nativeQuery = true)
+	List<String> getDistinctLocationsSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE :prefix%", nativeQuery = true)
+	List<Employee> getEmployeesByNamePrefixSQL(String prefix);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal BETWEEN :min AND :max", nativeQuery = true)
+	List<Employee> getEmployeesInSalaryRangeSQL(Double min, Double max);
+
+	@Query(value = "SELECT * FROM emp_excel_table ORDER BY emp_sal DESC", nativeQuery = true)
+	List<Employee> getAllOrderBySalaryDescSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table ORDER BY emp_name ASC", nativeQuery = true)
+	List<Employee> getAllOrderByNameAscSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc IN (:locs)", nativeQuery = true)
+	List<Employee> getEmployeesInLocationsSQL(List<String> locs);
+
+	@Query(value = "SELECT emp_loc, COUNT(*) FROM emp_excel_table GROUP BY emp_loc", nativeQuery = true)
+	List<Object[]> getCountByLocationSQL();
+
+	@Query(value = "SELECT emp_loc, AVG(emp_sal) FROM emp_excel_table GROUP BY emp_loc", nativeQuery = true)
+	List<Object[]> getAverageSalaryByLocationSQL();
+
+	@Transactional
+	@Modifying
+	@Query(value = "DELETE FROM emp_excel_table WHERE emp_id = :id", nativeQuery = true)
+	void deleteEmployeeSQL(Integer id);
+
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE emp_excel_table SET emp_sal = :sal WHERE emp_id = :id", nativeQuery = true)
+	void updateEmployeeSalarySQL(Integer id, Double sal);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc IS NULL", nativeQuery = true)
+	List<Employee> getEmployeesWithNullLocationSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name IS NOT NULL", nativeQuery = true)
+	List<Employee> getEmployeesWithNameSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal >= :sal", nativeQuery = true)
+	List<Employee> getEmployeesWithMinSalarySQL(Double sal);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE %:name%", nativeQuery = true)
+	List<Employee> getEmployeesByNameContainsSQL(String name);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc <> :loc", nativeQuery = true)
+	List<Employee> getEmployeesNotInLocationSQL(String loc);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_id IN (:ids)", nativeQuery = true)
+	List<Employee> getEmployeesByIdsSQL(List<Integer> ids);
+
+	@Query(value = "SELECT emp_name, emp_sal FROM emp_excel_table WHERE emp_sal > :sal", nativeQuery = true)
+	List<Object[]> getNameAndSalaryAboveSQL(Double sal);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE '_a%'", nativeQuery = true)
+	List<Employee> getEmployeesBySecondLetterASQL();
+
+	@Query(value = "SELECT emp_loc, SUM(emp_sal) FROM emp_excel_table GROUP BY emp_loc", nativeQuery = true)
+	List<Object[]> getTotalSalaryByLocationSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal > 75000 ORDER BY emp_name", nativeQuery = true)
+	List<Employee> getHighEarnersOrderedSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc = 'Hyderabad'", nativeQuery = true)
+	List<Employee> getHyderabadEmployeesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc = 'Chennai'", nativeQuery = true)
+	List<Employee> getChennaiEmployeesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc = 'Pune'", nativeQuery = true)
+	List<Employee> getPuneEmployeesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal < 50000", nativeQuery = true)
+	List<Employee> getLowSalaryEmployeesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal > 100000", nativeQuery = true)
+	List<Employee> getHighSalaryEmployeesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE '%esh'", nativeQuery = true)
+	List<Employee> getEmployeesEndingWithEshSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc IS NOT NULL", nativeQuery = true)
+	List<Employee> getEmployeesWithLocationSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_id > 10", nativeQuery = true)
+	List<Employee> getEmployeesAfterId10SQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_id < 10", nativeQuery = true)
+	List<Employee> getEmployeesBeforeId10SQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table ORDER BY emp_loc, emp_sal DESC", nativeQuery = true)
+	List<Employee> getEmployeesOrderedByLocAndSalarySQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE 'A%'", nativeQuery = true)
+	List<Employee> getEmployeesStartingWithASQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc LIKE '%ai%'", nativeQuery = true)
+	List<Employee> getEmployeesLocationContainsAiSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_sal BETWEEN 60000 AND 90000", nativeQuery = true)
+	List<Employee> getMidRangeSalariesSQL();
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_loc = :loc AND emp_sal > :sal", nativeQuery = true)
+	List<Employee> getEmployeesByLocAndMinSalarySQL(String loc, Double sal);
+
+	@Query(value = "SELECT * FROM emp_excel_table WHERE emp_name LIKE '%a%' ORDER BY emp_sal DESC", nativeQuery = true)
+	List<Employee> getEmployeesWithAInNameOrderedSQL();
+
+	@Query(value = "SELECT emp_loc, COUNT(emp_id) FROM emp_excel_table GROUP BY emp_loc HAVING COUNT(emp_id) > 2", nativeQuery = true)
+	List<Object[]> getLocWithMoreThanTwoEmployeesSQL();
+
+	@Query(value = "SELECT emp_name, emp_sal FROM emp_excel_table ORDER BY emp_sal DESC", nativeQuery = true)
+	List<Object[]> getNameAndSalaryOrderedSQL();
+
+}

@@ -21,9 +21,14 @@ public class No09EmployeeDataExportAsExcelSheetProjectApplication {
 //		bean.getAllEmployeeHQL();
 		
 //		bean.getAllEmployeeSQL();
-		bean.getEmployeeSQL();
+//		bean.getEmployeeSQL();
+		
+//		bean.getEmployeeHQL();
+		
+		bean.deleteEmployeeSQL();
 		
 		
 	}
 
 }
+  
